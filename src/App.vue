@@ -14,15 +14,15 @@
           <div class="subA">
             <h4> Liste de mes proches</h4>
             <img class="imagee" src="./assets/men.png" alt="John">
-            <div class="firstB" @click="handledata('user1')">
+            <div class="firstB" id="no1" @click="handledata('user1')" :style="{ 'background-color': dissapearColor }">
               <h3 id="sidedt">Sneha Roy<br>CEO</h3>
             </div>
             <img class="images" src="./assets/boy.png" alt="John">
-            <div class="firstB"  @click="handledata('user2')">
+            <div class="firstB" id="no2"  @click="handledata('user2')" :style="{ 'background-color': dissapearColor }" >
               <h3 id="sidedt">Sneha Roy<br>CEO</h3>
             </div>
             <img class="images" src="./assets/old.png" alt="John">
-            <div class="firstB"  @click="handledata('user3')">
+            <div class="firstB" id="no3"  @click="handledata('user3')" :style="{ 'background-color': dissapearColor }" >
               <div id="box">
                 <h3 id="sidedt">Sneha Roy<br>CEO</h3>
               </div>
@@ -49,7 +49,7 @@
               </div>
             </div>
             <div>
-              <img style="width: 40px;height: 40px;margin-left:-20rem" src="./assets/danger.png" @click="alert()" alt="">
+              <img style="width: 40px;height: 40px;margin-left:-20rem;cursor: pointer;" src="./assets/danger.png" @click="alert()" alt="">
               <h5 style="margin-top:-1.8rem;margin-left:-15rem">Alert</h5>
             </div>
           </div>
@@ -66,6 +66,7 @@ export default {
   name: 'App',
   data() {
     return {
+      dissapearColor: 'white',
       showModal: true,
       currentUser:'user1',
       users: {
@@ -153,8 +154,22 @@ export default {
   },
   methods:{
     handledata(user){
-      // console.log('hfdjkhsjkhf',user)
       this.currentUser=user
+      if(this.currentUser == 'user1'){
+        // this.dissapearColor = "green";
+        document.getElementById("no1").style.backgroundColor="green";
+        document.getElementById("no2").style.backgroundColor="white";
+        document.getElementById("no3").style.backgroundColor="white";
+      } else if(this.currentUser == 'user2') {
+        document.getElementById("no1").style.backgroundColor="white";
+        document.getElementById("no2").style.backgroundColor="green";
+        document.getElementById("no3").style.backgroundColor="white";
+      } else {
+        document.getElementById("no1").style.backgroundColor="white";
+        document.getElementById("no2").style.backgroundColor="white";
+        document.getElementById("no3").style.backgroundColor="green";
+      }
+      
     },
     getPic (image) {
       return require('./assets/' + image)
@@ -221,6 +236,7 @@ img{
   margin-left: -9rem;
 }
 .firstB {
+  cursor: pointer;
   display: flex;
   justify-content: space-around;
   border-radius: 8%;
@@ -302,14 +318,14 @@ img{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header {
-  background-color: #f1f1f1;
+  background-color: #cce8e2;
   padding: 20px;
   border-radius: 1% 1% 0 0;
   text-align: center;
   margin-top: -1.5rem;
 }
 .headers {
-  background-color: #f1f1f1;
+  background-color: #cce8e2;
   padding: 20px;
   text-align: center;
   width: 39.6rem;
