@@ -34,7 +34,7 @@
               <div class="innerCards">
                 <div class="secondA" v-for="data,idx in users[currentUser]['topdiv']" :key="idx">
                   <h3 class="head">
-                    <img id="newImage" :src="getPic(data.image)" alt="icons">Votre proche</h3>
+                    <img id="newImage" :src="getPic(data.image)" alt="icons"><p>Votre proche</p></h3>
                     <p id="dt">{{data.username}}</p>
                 </div>
               </div>
@@ -206,7 +206,7 @@ img{
 }
 #newImage{
   border-radius: 4%;
-  margin-left: -4.8rem;
+  margin-left: -0.9rem;
   text-align: center;
   width: 3rem;
   height: 3rem;
@@ -224,7 +224,7 @@ img{
   width: 14%;
   height: 21%;
   border-radius: 50%;
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   margin-left: -9rem;
 }
 .imagee{
@@ -232,7 +232,7 @@ img{
   width: 14%;
   height: 21%;
   border-radius: 50%;
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   margin-left: -9rem;
 }
 .firstB {
@@ -243,7 +243,7 @@ img{
   margin-top: 2rem;
   margin-left: 1.9rem;
   width: 15rem;
-  height: 8rem;
+  height: 7.3rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #sidedt{
@@ -267,7 +267,7 @@ img{
   margin-left: -13rem;
   margin-top: 1rem;
   width: 18rem;
-  height: 33rem;
+  height: 31rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .subB {
@@ -294,16 +294,26 @@ img{
   width: 30px;
   height: 30px;
 }
+p{
+  font-weight: 900;
+  text-align: center;
+  margin-top: -15px;
+  border-radius: 1% 1% 0 0;
+  padding: 15px;
+}
 .head {
+  display: flex;
+  flex-direction: row;
   background-color: #f1f1f1;
+  text-align: center;
   border-radius: 1% 1% 0 0;
   width: 15rem;
   height: 3rem;
   padding: 15px;
 }
 #dt{
-  margin-top: 4rem;
-  margin-left: -3rem;
+  margin-top: 1rem;
+  margin-left: -1rem;
 }
 #dt1{
   margin-top: 6rem;
@@ -318,9 +328,12 @@ img{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .header {
+  margin-left: -1.6rem;
+  margin-right: -2.7%;
+  // width: 105%;
   background-color: #cce8e2;
   padding: 20px;
-  border-radius: 1% 1% 0 0;
+  border-radius: 18px 18px 0 0 ;
   text-align: center;
   margin-top: -1.5rem;
 }
@@ -330,6 +343,9 @@ img{
   text-align: center;
   width: 39.6rem;
   margin-left: -0.1rem;
+}
+h4{
+  margin-top: 18px;
 }
 
 * {
